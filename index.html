@@ -15,7 +15,7 @@
         }
         
         body {
-            font-family: 'Adwaita', monospace;
+            font-family: 'IBM Plex Mono', monospace;
             -webkit-font-smoothing: none;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden; 
@@ -80,7 +80,6 @@
             height: 100%;
         }
 
-        /* NEW: Style for clickable project titles */
         .project-title-link {
             text-decoration: none;
             color: white;
@@ -114,31 +113,50 @@
         <section class="text-left py-24 md:py-32">
             <h1 class="text-3xl md:text-5xl font-bold">
                 <span class="text-white">[kapil@berkeley ~]$</span>
-                <span class="text-green-300">hi, i'm kapil</span>
+                <span class="text-green-300">Hi, I'm Kapil</span>
                 <span class="blinking-cursor"></span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-2xl">
+                A freshman at UC Berkeley studying math and computer science. Welcome to my root directory.
             </p>
             <a href="#coding" class="mt-10 btn-pixel">
                 exec ./view-work
             </a>
         </section>
 
-        <!-- About Me Section -->
+        <!-- UPDATED: About Me Section -->
         <section id="about" class="py-20">
             <h2 class="text-3xl font-bold text-center mb-12 text-white">
                 <span class="text-green-500">[~/</span>about<span class="text-green-500">]</span>
             </h2>
-            <div class="max-w-3xl mx-auto border-2 border-green-500 p-8 flex flex-col md:flex-row items-center gap-8">
-                <img 
-                    src="https://placehold.co/150x150/4ade80/000000?text=KD" 
-                    alt="Kapil"
-                    class="w-36 h-36 md:w-40 md:h-40 flex-shrink-0 border-4 border-green-700"
-                    onerror="this.src='https://placehold.co/150x150/4ade80/000000?text=Me'"
-                >
-                <p class="text-lg text-gray-300">
+            <!-- New layout: Text on top, image grid below. Wider container. -->
+            <div class="max-w-4xl mx-auto border-2 border-green-500 p-8">
+                <p class="text-lg text-gray-300 mb-8">
                     Hello! I'm Kapil, a freshman at UC Berkeley studying math and computer science.
                     <br><br>
-                    I'm passionate about music, origami, and exploring the world of tech
+                    I'm passionate about music, origami, and exploring new tech. When I'm not coding, you'll find me running, playing guitar, or performing.
                 </p>
+                <!-- New Image Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Image 1: Guitar -->
+                    <img 
+                        src="IMG_5693.jpg" 
+                        alt="Kapil playing guitar"
+                        class="w-full h-auto object-cover border-2 border-gray-700 hover:border-green-400"
+                    >
+                    <!-- Image 2: Running -->
+                    <img 
+                        src="2025-11-14-235710_hyprshot.png" 
+                        alt="Kapil running on a track"
+                        class="w-full h-auto object-cover border-2 border-gray-700 hover:border-green-400"
+                    >
+                    <!-- Image 3: Band -->
+                    <img 
+                        src="2025-11-14-235726_hyprshot.jpg" 
+                        alt="Kapil on stage with a band"
+                        class="w-full h-auto object-cover border-2 border-gray-700 hover:border-green-400"
+                    >
+                </div>
             </div>
         </section>
 
@@ -152,7 +170,6 @@
                 <!-- Project Card 1 -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
                     <img src="https://placehold.co/600x400/1f2937/4ade80?text=Project.exe" alt="Project 1 Screenshot" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Project.exe'">
-                    <!-- UPDATED: Title is now a link -->
                     <h3 class="text-2xl font-bold mb-2">
                         <a href="#" class="project-title-link">Project Title One</a>
                     </h3>
@@ -168,7 +185,6 @@
                 <!-- Project Card 2 -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
                     <img src="https://placehold.co/600x400/1f2937/4ade80?text=Project.exe" alt="Project 2 Screenshot" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Project.exe'">
-                    <!-- UPDATED: Title is now a link -->
                     <h3 class="text-2xl font-bold mb-2">
                         <a href="#" class="project-title-link">Project Title Two</a>
                     </h3>
@@ -184,7 +200,6 @@
                 <!-- Project Card 3 -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
                     <img src="https://placehold.co/600x400/1f2937/4ade80?text=Project.exe" alt="Project 3 Screenshot" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Project.exe'">
-                    <!-- UPDATED: Title is now a link -->
                     <h3 class="text-2xl font-bold mb-2">
                         <a href="#" class="project-title-link">Project Title Three</a>
                     </h3>
@@ -211,15 +226,14 @@
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="video-container">
-                    <iframe src="https://youtu.be/gOg-w7STr0I?si=FC6iroUee8LSBRtb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/hnQ6ntRB-No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-container">
-                    <iframe src="https://youtu.be/hnQ6ntRB-No?si=fMi5ixDBj3gTs2Xp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/gOg-w7STr0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <!-- NEW: Link to YouTube Channel -->
             <div class="text-center">
-                <a href="https://www.youtube.com/@kapilsmusicworld/home" target="_blank" rel="noopener noreferrer" class="btn-pixel !py-1 !px-4 text-sm">
+                <a href="https://www.youtube.com/@kapilsmusicworld/videos" target="_blank" rel="noopener noreferrer" class="btn-pixel !py-1 !px-4 text-sm">
                     ls -a [./youtube]
                 </a>
             </div>
@@ -228,33 +242,30 @@
             <h3 class="text-2xl font-bold text-left mb-8 mt-16 text-green-300">
                 [~/gallery/origami]
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Origami Card 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Origami Card 1: Pegasus -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
-                    <img src="https://www.instagram.com/p/DL-jIDhypct/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" alt="Origami 1" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+1'">
-                    <!-- UPDATED: Title is now a link -->
+                    <a href="https://www.instagram.com/p/DL-jIDhypct/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                        <img src="https://placehold.co/600x400/1f2937/4ade80?text=Pegasus" alt="Pegasus Origami" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Pegasus'">
+                    </a>
                     <h3 class="text-2xl font-bold mb-2">
-                        <a href="#" class="project-title-link">Pegasus</a>
+                        <a href="https://www.instagram.com/p/DL-jIDhypct/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="project-title-link" target="_blank" rel="noopener noreferrer">
+                            Pegasus
+                        </a>
                     </h3>
-                    <p class="text-gray-300">designed by Satoshi Kamiya, folded by me</p>
+                    <p class="text-gray-300">Origami model designed by Satoshi Kamiya, folded by me.</p>
                 </div>
-                <!-- Origami Card 2 -->
+                <!-- Origami Card 2: Bear -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
-                    <img src="https.co/600x400/1f2937/4ade80?text=Origami+Model+2" alt="Origami 2" class="w-full h-56 mb-4" onerror="this.src='https.co/600x400/1f2937/4ade80?text=Origami+Model+2'">
-                    <!-- UPDATED: Title is now a link -->
+                     <a href="https://www.instagram.com/p/DIK3sO4pTbq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                        <img src="https://placehold.co/600x400/1f2937/4ade80?text=Bear" alt="Bear Origami" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Bear'">
+                    </a>
                     <h3 class="text-2xl font-bold mb-2">
-                        <a href="#" class="project-title-link">Origami Model Two</a>
+                        <a href="https://www.instagram.com/p/DIK3sO4pTbq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="project-title-link" target="_blank" rel="noopener noreferrer">
+                            Grizzly Bear
+                        </a>
                     </h3>
-                    <p class="text-gray-300">A description of the origami model, paper used, etc.</p>
-                </div>
-                <!-- Origami Card 3 -->
-                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
-                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+3" alt="Origami 3" class="w-full h-56 mb-4" onerror="this.src='https.co/600x400/1f2937/4ade80?text=Origami+Model+3'">
-                    <!-- UPDATED: Title is now a link -->
-                    <h3 class="text-2xl font-bold mb-2">
-                        <a href="#" class="project-title-link">Origami Model Three</a>
-                    </h3>
-                    <p class="text-gray-300">A description of the origami model, paper used, etc.</p>
+                    <p class="text-gray-300">Origami model designed by Satoshi Kamiya, folded by me.</p>
                 </div>
             </div>
         </section>
@@ -271,7 +282,7 @@
             <div class="flex flex-wrap justify-center items-center gap-8">
                 <!-- GitHub -->
                 <a href="https://github.com/kapilcdave" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="GitHub">
-                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.01 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                 </a>
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/kapilcdave/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="LinkedIn">
@@ -308,7 +319,7 @@
     <!-- JavaScript for Matrix Animation -->
     <script>
         const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d'); // Corrected from 'd' to '2d'
+        const ctx = canvas.getContext('2d'); 
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -319,7 +330,7 @@
         const combinedChars = (katakana + latin + nums).split("");
 
         const fontSize = 14;
-        let columns = canvas.width / fontSize; // Use 'let' to allow reassignment
+        let columns = canvas.width / fontSize;
 
         const drops = [];
         for (let x = 0; x < columns; x++) {
@@ -329,12 +340,12 @@
         let matrixInterval;
 
         function draw() {
-            if (!ctx) return; // Stop if context is somehow lost
+            if (!ctx) return; 
             
             ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = "#0f0"; // Green text
+            ctx.fillStyle = "#0f0"; 
             ctx.font = fontSize + "px 'IBM Plex Mono'"; 
 
             for (let i = 0; i < drops.length; i++) {
@@ -350,24 +361,22 @@
 
         function startAnimation() {
             if (matrixInterval) clearInterval(matrixInterval);
-            matrixInterval = setInterval(draw, 60); // Slower interval (75ms)
+            matrixInterval = setInterval(draw, 75); 
         }
         
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             
-            columns = canvas.width / fontSize; // Recalculate columns
-            drops.length = 0; // Clear old drops array
-            for (let x = 0; x < columns; x++) { // Repopulate
+            columns = canvas.width / fontSize; 
+            drops.length = 0; 
+            for (let x = 0; x < columns; x++) { 
                 drops[x] = 1;
             }
             
-            // No need to re-get context, it should persist
-            startAnimation(); // Restart animation with new dimensions
+            startAnimation(); 
         });
 
-        // Initial start
         startAnimation();
 
     </script>
