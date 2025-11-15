@@ -116,9 +116,6 @@
                 <span class="text-white">[kapil@berkeley ~]$</span>
                 <span class="text-green-300">hi, i'm kapil</span>
                 <span class="blinking-cursor"></span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-2xl">
-                A freshman at UC Berkeley studying math and computer science.
             </p>
             <a href="#coding" class="mt-10 btn-pixel">
                 exec ./view-work
@@ -140,7 +137,7 @@
                 <p class="text-lg text-gray-300">
                     Hello! I'm Kapil, a freshman at UC Berkeley studying math and computer science.
                     <br><br>
-                    I'm passionate about music, origami, and exploring new tech.
+                    I'm passionate about music, origami, and exploring the world of tech
                 </p>
             </div>
         </section>
@@ -214,15 +211,15 @@
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Y1-T1B-0-kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://youtu.be/gOg-w7STr0I?si=FC6iroUee8LSBRtb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Ua-B_i-bB_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://youtu.be/hnQ6ntRB-No?si=fMi5ixDBj3gTs2Xp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <!-- NEW: Link to YouTube Channel -->
             <div class="text-center">
-                <a href="https://www.youtube.com/@kapilsmusicworld/videos" target="_blank" rel="noopener noreferrer" class="btn-pixel !py-1 !px-4 text-sm">
+                <a href="https://www.youtube.com/@kapilsmusicworld/home" target="_blank" rel="noopener noreferrer" class="btn-pixel !py-1 !px-4 text-sm">
                     ls -a [./youtube]
                 </a>
             </div>
@@ -234,12 +231,12 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Origami Card 1 -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
-                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+1" alt="Origami 1" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+1'">
+                    <img src="https://www.instagram.com/p/DL-jIDhypct/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" alt="Origami 1" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+1'">
                     <!-- UPDATED: Title is now a link -->
                     <h3 class="text-2xl font-bold mb-2">
-                        <a href="#" class="project-title-link">Origami Model One</a>
+                        <a href="#" class="project-title-link">Pegasus</a>
                     </h3>
-                    <p class="text-gray-300">A description of the origami model, paper used, etc.</p>
+                    <p class="text-gray-300">designed by Satoshi Kamiya, folded by me</p>
                 </div>
                 <!-- Origami Card 2 -->
                 <div class="border-2 border-gray-700 p-6 hover:border-green-400">
@@ -353,7 +350,7 @@
 
         function startAnimation() {
             if (matrixInterval) clearInterval(matrixInterval);
-            matrixInterval = setInterval(draw, 75); // Slower interval (75ms)
+            matrixInterval = setInterval(draw, 60); // Slower interval (75ms)
         }
         
         window.addEventListener('resize', () => {
