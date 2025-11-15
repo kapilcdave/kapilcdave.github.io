@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kapil's Website</title>
+    <title>kapil@berkeley:~</title>
   
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -15,145 +15,285 @@
         }
         
         body {
-            font-family: 'IBM Plex Mono', monospace;
+            font-family: 'Adwaita', monospace;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; 
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
         }
         
-        .hero-text {
-            background: linear-gradient(to right, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .blinking-cursor {
+            width: 10px; 
+            height: 1.5rem;
+            background-color: #4ade80; 
+            display: inline-block;
+            animation: blink 1s step-end infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        a {
+            transition: none;
+        }
+
+        .btn-pixel {
+            background-color: #4ade80; /* green-400 */
+            color: #000;
+            font-weight: 700;
+            padding: 8px 24px;
+            border: 2px solid #4ade80;
+            display: inline-block; /* Ensure it respects padding */
+        }
+        .btn-pixel:hover {
+            background-color: #000;
+            color: #4ade80;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            border: 2px solid #374151; /* gray-700 */
+        }
+        .video-container:hover {
+            border-color: #4ade80; /* green-400 */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* NEW: Style for clickable project titles */
+        .project-title-link {
+            text-decoration: none;
+            color: white;
+            display: inline-block; /* Allows for padding */
+            padding: 2px 4px; /* Small padding for hover effect */
+        }
+        .project-title-link:hover {
+            background-color: #4ade80;
+            color: #000;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 antialiased">
+<body class="bg-black text-green-500 antialiased"> 
 
-    <header class="container mx-auto px-6 py-8 flex justify-between items-center">
+    <canvas id="matrix-canvas"></canvas>
 
-        <a href="#" class="text-2xl font-bold text-white">Kapil</a>
-        
-        <nav class="space-x-6">
-            <a href="#about" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200">About</a>
-            <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200">Projects</a>
-            <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition-colors duration-200">Contact</a>
+    <!-- Header -->
+    <header class="container mx-auto px-6 py-6 flex justify-between items-center border-b border-green-800">
+        <a href="#" class="text-xl font-bold text-white hover:bg-green-500 hover:text-black px-2">[kapil@berkeley]</a>
+        <nav class="space-x-4">
+            <a href="#about" class="text-green-400 hover:bg-green-400 hover:text-black px-2 py-1">./about.sh</a>
+            <a href="#coding" class="text-green-400 hover:bg-green-400 hover:text-black px-2 py-1">./coding.sh</a>
+            <a href="#gallery" class="text-green-400 hover:bg-green-400 hover:text-black px-2 py-1">./gallery.sh</a>
+            <a href="#contact" class="text-green-400 hover:bg-green-400 hover:text-black px-2 py-1">./contact.sh</a>
         </nav>
     </header>
 
     <main class="container mx-auto px-6">
 
-        <section class="text-center py-24 md:py-32">
-            <h1 class="text-5xl md:text-7xl font-extrabold hero-text">
-                Hi, I'm Kapil
+        <!-- Hero Section -->
+        <section class="text-left py-24 md:py-32">
+            <h1 class="text-3xl md:text-5xl font-bold">
+                <span class="text-white">[kapil@berkeley ~]$</span>
+                <span class="text-green-300">hi, i'm kapil</span>
+                <span class="blinking-cursor"></span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mt-6 max-w-2xl mx-auto">
-                
+            <p class="text-lg md:text-xl text-gray-300 mt-6 max-w-2xl">
+                A freshman at UC Berkeley studying math and computer science.
             </p>
-            <a href="#projects" class="mt-10 inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-transform duration-200 hover:scale-105">
-                View My Work
+            <a href="#coding" class="mt-10 btn-pixel">
+                exec ./view-work
             </a>
         </section>
 
+        <!-- About Me Section -->
         <section id="about" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">
-                About Me
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">
+                <span class="text-green-500">[~/</span>about<span class="text-green-500">]</span>
             </h2>
-            <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl flex flex-col md:flex-row items-center gap-8">
+            <div class="max-w-3xl mx-auto border-2 border-green-500 p-8 flex flex-col md:flex-row items-center gap-8">
                 <img 
-                    src="https://placehold.co/150x150/4f46e5/ffffff?text=KD" 
+                    src="https://placehold.co/150x150/4ade80/000000?text=KD" 
                     alt="Kapil"
-                    class="rounded-full w-36 h-36 md:w-40 md:h-40 flex-shrink-0 border-4 border-gray-700"
-                    onerror="this.src='https://placehold.co/150x150/4f46e5/ffffff?text=Me'"
+                    class="w-36 h-36 md:w-40 md:h-40 flex-shrink-0 border-4 border-green-700"
+                    onerror="this.src='https://placehold.co/150x150/4ade80/000000?text=Me'"
                 >
                 <p class="text-lg text-gray-300">
                     Hello! I'm Kapil, a freshman at UC Berkeley studying math and computer science.
                     <br><br>
+                    I'm passionate about music, origami, and exploring new tech.
                 </p>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-16">
-                My Projects
+        <!-- Coding Projects Section -->
+        <section id="coding" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-16 text-white">
+                <span class="text-green-500">[~/</span>coding-projects<span class="text-green-500">]</span>
             </h2>
-            
-            <!-- Project Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Project Card 1 -->
-                <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/374151/e0e7ff?text=Project+1" alt="Project 1 Screenshot" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/374151/e0e7ff?text=Project+1'">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Project Title One</h3>
-                        <p class="text-gray-300 mb-4">
-                            A brief description of this project, what it does, and what technologies were used.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                                View Code
-                            </a>
-                            <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                                Live Demo
-                            </a>
-                        </div>
+                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
+                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Project.exe" alt="Project 1 Screenshot" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Project.exe'">
+                    <!-- UPDATED: Title is now a link -->
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="#" class="project-title-link">Project Title One</a>
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        A brief description of this project, what it does, and what technologies were used.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="btn-pixel !py-1 !px-4 text-sm">View Code</a>
+                        <a href="#" class="btn-pixel !py-1 !px-4 text-sm !bg-gray-700 !text-white !border-gray-700 hover:!bg-black hover:!text-green-400 hover:!border-green-400">Live Demo</a>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/374151/e0e7ff?text=Project+2" alt="Project 2 Screenshot" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/374151/e0e7ff?text=Project+2'">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Project Title Two</h3>
-                        <p class="text-gray-300 mb-4">
-                            This project was a deep dive into [Technology] and solved [a specific problem].
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                                View Code
-                            </a>
-                            <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                                Live Demo
-                            </a>
-                        </div>
+                <!-- Project Card 2 -->
+                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
+                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Project.exe" alt="Project 2 Screenshot" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Project.exe'">
+                    <!-- UPDATED: Title is now a link -->
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="#" class="project-title-link">Project Title Two</a>
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        This project was a deep dive into [Technology] and solved [a specific problem].
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="btn-pixel !py-1 !px-4 text-sm">View Code</a>
+                        <a href="#" class="btn-pixel !py-1 !px-4 text-sm !bg-gray-700 !text-white !border-gray-700 hover:!bg-black hover:!text-green-400 hover:!border-green-400">Live Demo</a>
                     </div>
                 </div>
 
-                <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/374151/e0e7ff?text=Project+3" alt="Project 3 Screenshot" class="w-full h-56 object-cover" onerror="this.src='https://placehold.co/600x400/374151/e0e7ff?text=Project+3'">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Project Title Three</h3>
-                        <p class="text-gray-300 mb-4">
-                            A cool utility app built with [Tech 1] and [Tech 2]. Focused on performance and UX.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                                View Code
-                            </a>
-                            <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition-colors">
-                                Live Demo
-                            </a>
-                        </div>
+                <!-- Project Card 3 -->
+                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
+                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Project.exe" alt="Project 3 Screenshot" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Project.exe'">
+                    <!-- UPDATED: Title is now a link -->
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="#" class="project-title-link">Project Title Three</a>
+                    </h3>
+                    <p class="text-gray-300 mb-4">
+                        A cool utility app built with [Tech 1] and [Tech 2]. Focused on performance and UX.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="btn-pixel !py-1 !px-4 text-sm">View Code</a>
+                        <a href="#" class="btn-pixel !py-1 !px-4 text-sm !bg-gray-700 !text-white !border-gray-700 hover:!bg-black hover:!text-green-400 hover:!border-green-400">Live Demo</a>
                     </div>
                 </div>
-
             </div>
         </section>
 
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20">
+            <h2 class="text-3xl font-bold text-center mb-16 text-white">
+                <span class="text-green-500">[~/</span>gallery<span class="text-green-500">]</span>
+            </h2>
+
+            <!-- YouTube Subsection -->
+            <h3 class="text-2xl font-bold text-left mb-8 text-green-300">
+                [~/gallery/youtube]
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Y1-T1B-0-kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Ua-B_i-bB_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- NEW: Link to YouTube Channel -->
+            <div class="text-center">
+                <a href="https://www.youtube.com/@kapilsmusicworld/videos" target="_blank" rel="noopener noreferrer" class="btn-pixel !py-1 !px-4 text-sm">
+                    ls -a [./youtube]
+                </a>
+            </div>
+
+            <!-- Origami Subsection -->
+            <h3 class="text-2xl font-bold text-left mb-8 mt-16 text-green-300">
+                [~/gallery/origami]
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Origami Card 1 -->
+                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
+                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+1" alt="Origami 1" class="w-full h-56 mb-4" onerror="this.src='https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+1'">
+                    <!-- UPDATED: Title is now a link -->
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="#" class="project-title-link">Origami Model One</a>
+                    </h3>
+                    <p class="text-gray-300">A description of the origami model, paper used, etc.</p>
+                </div>
+                <!-- Origami Card 2 -->
+                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
+                    <img src="https.co/600x400/1f2937/4ade80?text=Origami+Model+2" alt="Origami 2" class="w-full h-56 mb-4" onerror="this.src='https.co/600x400/1f2937/4ade80?text=Origami+Model+2'">
+                    <!-- UPDATED: Title is now a link -->
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="#" class="project-title-link">Origami Model Two</a>
+                    </h3>
+                    <p class="text-gray-300">A description of the origami model, paper used, etc.</p>
+                </div>
+                <!-- Origami Card 3 -->
+                <div class="border-2 border-gray-700 p-6 hover:border-green-400">
+                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=Origami+Model+3" alt="Origami 3" class="w-full h-56 mb-4" onerror="this.src='https.co/600x400/1f2937/4ade80?text=Origami+Model+3'">
+                    <!-- UPDATED: Title is now a link -->
+                    <h3 class="text-2xl font-bold mb-2">
+                        <a href="#" class="project-title-link">Origami Model Three</a>
+                    </h3>
+                    <p class="text-gray-300">A description of the origami model, paper used, etc.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="py-20 text-center">
-            <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+            <h2 class="text-3xl font-bold mb-8 text-white">
+                <span class="text-green-500">[~/</span>contact<span class="text-green-500">]</span>
+            </h2>
             <p class="text-xl text-gray-300 mb-10 max-w-lg mx-auto">
-                I'm always open to new opportunities and conversations. Feel free to reach out!
+                I'm always open to new opportunities. Feel free to ping me.
             </p>
             
-            <div class="flex justify-center items-center gap-8">
-
-                <a href="https://github.com/kapilcdave" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400 transition-colors" title="GitHub">
+            <div class="flex flex-wrap justify-center items-center gap-8">
+                <!-- GitHub -->
+                <a href="https://github.com/kapilcdave" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="GitHub">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                 </a>
-                
-                <a href="https://www.linkedin.com/in/kapilcdave/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400 transition-colors" title="LinkedIn">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/kapilcdave/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="LinkedIn">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-
-                <a href="kapildave@berkeley.edu" class="text-gray-400 hover:text-indigo-400 transition-colors" title="Email">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@kapilsmusicworld/videos" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="YouTube">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M10,15l-3.5-3.5l1.4-1.4L10,12.2l4.6-4.6l1.4,1.4L10,15z M21.5,8.1c-0.2-0.8-0.8-1.4-1.6-1.6C18.2,6,12,6,12,6s-6.2,0-7.9,0.5 c-0.8,0.2-1.4,0.8-1.6,1.6C2,9.8,2,12,2,12s0,2.2,0.5,3.9c0.2,0.8,0.8,1.4,1.6,1.6C5.8,18,12,18,12,18s6.2,0,7.9-0.5 c0.8-0.2,1.4-0.8,1.6-1.6C22,14.2,22,12,22,12S22,9.8,21.5,8.1z M8,15.5V8.5L14,12L8,15.5z"></path></svg>
+                </a>
+                <!-- X.com -->
+                <a href="https://x.com/kapildaway" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="X.com">
+                    <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H4.68l4.713 6.231L14.07 2.25h4.174zm-1.64 17.28h2.54l-9.7-12.98H6.85l9.75 12.98z"></path></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/kapil.da.way/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-green-400" title="Instagram">
+                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.229-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85C2.229 3.874 3.748 2.331 6.97 2.185c1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 10.333c-2.302 0-4.171-1.869-4.171-4.171s1.869-4.171 4.171-4.171 4.171 1.869 4.171 4.171-1.869 4.171-4.171 4.171zm6.162-10.84c-.802 0-1.452.65-1.452 1.452s.65 1.452 1.452 1.452 1.452-.65 1.452-1.452-.65-1.452-1.452-1.452z"></path></svg>
+                </a>
+                <!-- Email -->
+                <a href="mailto:kapildave@berkeley.edu" class="text-gray-600 hover:text-green-400" title="Email">
                     <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
                 </a>
             </div>
@@ -162,11 +302,77 @@
     </main>
 
     <!-- Footer -->
-    <footer class="text-center py-10 mt-16 border-t border-gray-800">
-        <p class="text-gray-500">
-            &copy; 2025 Kapil Dave. Built with <span title="Tailwind CSS">❤️</span>
+    <footer class="text-center py-10 mt-16 border-t border-green-800">
+        <p class="text-gray-600">
+            &copy; 2025 Kapil Dave. Built with <span title="vim" class="text-green-600">[■]</span>
         </p>
     </footer>
 
+    <!-- JavaScript for Matrix Animation -->
+    <script>
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d'); // Corrected from 'd' to '2d'
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const katakana = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
+        const latin = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const nums = "0123456789";
+        const combinedChars = (katakana + latin + nums).split("");
+
+        const fontSize = 14;
+        let columns = canvas.width / fontSize; // Use 'let' to allow reassignment
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        let matrixInterval;
+
+        function draw() {
+            if (!ctx) return; // Stop if context is somehow lost
+            
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#0f0"; // Green text
+            ctx.font = fontSize + "px 'IBM Plex Mono'"; 
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = combinedChars[Math.floor(Math.random() * combinedChars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        function startAnimation() {
+            if (matrixInterval) clearInterval(matrixInterval);
+            matrixInterval = setInterval(draw, 75); // Slower interval (75ms)
+        }
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            columns = canvas.width / fontSize; // Recalculate columns
+            drops.length = 0; // Clear old drops array
+            for (let x = 0; x < columns; x++) { // Repopulate
+                drops[x] = 1;
+            }
+            
+            // No need to re-get context, it should persist
+            startAnimation(); // Restart animation with new dimensions
+        });
+
+        // Initial start
+        startAnimation();
+
+    </script>
 </body>
 </html>
