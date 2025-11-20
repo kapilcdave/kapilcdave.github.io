@@ -18,35 +18,27 @@
             font-family: 'Adwaita', monospace;
             color: #fff;
         }
-        .blinking-cursor {
-            width: 10px; 
-            height: 1.5rem;
-            background-color: #fff;
-            display: inline-block;
-            animation: blink 1s step-end infinite;
-            margin-left: 8px;
-            vertical-align: middle;
+        /* Custom scrollbar for a more terminal feel */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-        @keyframes blink { 50% { opacity: 0; } }
-        .nav-link {
-            color: #fff;
-            text-decoration: none;
-            padding: 2px 4px;
-            display: inline-block;
+        ::-webkit-scrollbar-track {
+            background: #111; 
         }
-        .nav-link:hover {
-            background-color: #fff;
-            color: #000;
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
         }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
         .btn-pixel {
             background-color: #fff; color: #000; font-weight: 700;
             padding: 8px 12px; border: 2px solid #fff; display: inline-block; text-decoration: none;
+            font-size: 0.9rem;
         }
         .btn-pixel:hover { background-color: #000; color: #fff; }
-        .project-title-link {
-            text-decoration: none; color: white; display: inline-block; padding: 2px 4px;
-        }
-        .project-title-link:hover { background-color: #fff; color: #000; }
+        
         .video-container {
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
             width: 100%; border: 2px solid #555;
@@ -72,80 +64,107 @@
         .project-card:hover {
             border-color: #fff;
         }
+        
+        /* Terminal Input Styling */
+        #terminal-input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: 'Adwaita', monospace;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            caret-color: #fff; /* The blinking cursor color */
+        }
     </style>
 </head>
 <body>
     <main class="max-w-4xl mx-auto p-8 md:p-12">
+        
         <section id="home" class="mb-16">
-            <h1 class="text-3xl font-bold">
-                [kapil@website]$ <span class="text-gray-300">welcome!</span>
-                <span class="blinking-cursor"></span?>
-            </h1>
+            <div class="flex items-center text-3xl font-bold flex-wrap">
+                <label for="terminal-input" class="whitespace-nowrap mr-3">[kapil@website]$</label>
+                <div class="flex-grow">
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus>
+                </div>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 italic opacity-0 transition-opacity duration-1000" id="hint-text"></p>
         </section>
+
         <div class="relative">
-            <div class="absolute top-0 left-4 w-px h-full bg-gray-700" aria-hidden="true"></div>
-            <section id="about" class="relative pl-12 mb-16">
-                <div class="absolute top-4 left-4 w-8 h-px bg-gray-700" aria-hidden="true"></div>
+            
+            <section id="about" class="relative mb-16">
                 <h2 class="text-2xl font-bold mb-6 text-white">
                     <span class="text-gray-500">./</span>about
                 </h2>
-                <div class="pl-8 border-l border-gray-700">
+                <div class="pl-4"> 
                     <p class="text-lg text-gray-300">
                         Hello! I'm Kapil, a freshman at UC Berkeley studying math and computer science
                     </p>
                 </div>
             </section>
-            <section id="projects" class="relative pl-12 mb-16">
-                <div class="absolute top-4 left-4 w-8 h-px bg-gray-700" aria-hidden="true"></div>
+
+            <section id="projects" class="relative mb-16">
                 <h2 class="text-2xl font-bold mb-6 text-white">
                     <span class="text-gray-500">./</span>projects
                 </h2>
-                <div class="pl-8 border-l border-gray-700">
+                <div class="pl-4">
                     <div class="space-y-4">
+                        
                         <div class="project-card">
                             <h3 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/kapilcdave/KiteFlyerSimulator" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                                    Kite Flier Simulator
-                                </a>
+                                Kite Flier Simulator
                             </h3>
-                            <p class="text-gray-400 mb-3">A physics-based kite flying simulation</p>
-                            <a href="https://github.com/kapilcdave/KiteFlyerSimulator" target="_blank" rel="noopener noreferrer" class="btn-pixel">
-                                View on GitHub →
-                            </a>
+                            <p class="text-gray-400 mb-4">A physics-based kite flying simulation</p>
+                            
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://github.com/kapilcdave/KiteFlyerSimulator" target="_blank" rel="noopener noreferrer" class="btn-pixel">
+                                    View on GitHub →
+                                </a>
+                                <a href="#" class="btn-pixel">
+                                    Demo →
+                                </a>
+                            </div>
                         </div>
+
                         <div class="project-card">
                             <h3 class="text-xl font-bold mb-2">
-                                <a href="https://github.com/kapilcdave/fortnite2d" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                                    Fortnite 2D
-                                </a>
+                                Fortnite 2D
                             </h3>
-                            <p class="text-gray-400 mb-3">A 2D version of the popular battle royale game</p>
-                            <a href="https://github.com/kapilcdave/fortnite2d" target="_blank" rel="noopener noreferrer" class="btn-pixel">
-                                View on GitHub →
-                            </a>
+                            <p class="text-gray-400 mb-4">A 2D version of the popular battle royale game</p>
+                            
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://github.com/kapilcdave/fortnite2d" target="_blank" rel="noopener noreferrer" class="btn-pixel">
+                                    View on GitHub →
+                                </a>
+                                <a href="#" class="btn-pixel">
+                                    Demo →
+                                </a>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </section>
 
-            <section id="music" class="relative pl-12 mb-16">
-                <div class="absolute top-4 left-4 w-8 h-px bg-gray-700" aria-hidden="true"></div>
+            <section id="music" class="relative mb-16">
                 <h2 class="text-2xl font-bold mb-6 text-white">
                     <span class="text-gray-500">./</span>music
                 </h2>
-                <div class="pl-8 border-l border-gray-700">
+                <div class="pl-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="video-container"><iframe src="https://www.youtube.com/embed/hnQ6ntRB-No" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
                         <div class="video-container"><iframe src="https://www.youtube.com/embed/gOg-w7STr0I" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
                     </div>
                 </div>
             </section>
-            <section id="contact" class="relative pl-12">
-                <div class="absolute top-4 left-4 w-8 h-px bg-gray-700" aria-hidden="true"></div>
+
+            <section id="contact" class="relative">
                 <h2 class="text-2xl font-bold mb-6 text-white">
                     <span class="text-gray-500">./</span>contact
                 </h2>
-                <div class="pl-8 border-l border-gray-700">
+                <div class="pl-4">
                     <p class="text-xl text-gray-300 mb-10 max-w-lg mx-auto text-center"></p>
                     <div class="flex flex-wrap justify-center items-center gap-8">
                         <a href="https://github.com/kapilcdave" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="GitHub">
@@ -171,12 +190,48 @@
             </section>
         </div>
     </main>
+    
     <script>
         window.onload = () => {
             if (typeof window.instgrm !== 'undefined') {
                 window.instgrm.Embeds.process();
             }
+            
+            // Focus the terminal input on load
+            const input = document.getElementById('terminal-input');
+            const hint = document.getElementById('hint-text');
+            if(input) {
+                input.focus();
+                // Show hint after 2 seconds
+                setTimeout(() => {
+                    if(hint) hint.style.opacity = '1';
+                }, 2000);
+            }
+
+            // Always refocus on click (keeps the terminal feeling real)
+            document.addEventListener('click', (e) => {
+                // Don't refocus if clicking a link or button
+                if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'IFRAME') {
+                    input.focus();
+                }
+            });
         };
+
+        // Input Logic (Easter Egg Preparation)
+        const inputField = document.getElementById('terminal-input');
+        inputField.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = inputField.value.toLowerCase().trim();
+                
+                // --- EASTER EGG LOGIC GOES HERE ---
+                // Example:
+                // if (command === 'hello') { alert('Hi there!'); }
+                // ----------------------------------
+
+                console.log('Command executed:', command);
+                inputField.value = ''; // Clear the line like a real terminal
+            }
+        });
     </script>
 </body>
 </html>
