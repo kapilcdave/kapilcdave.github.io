@@ -147,7 +147,7 @@
                     <span class="text-gray-500">./</span>projects
                 </h2>
                 <div class="pl-4">
-                    <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
 
                         <div class="project-card">
                             <h3 class="text-xl font-bold mb-2">
@@ -160,7 +160,8 @@
                                     rel="noopener noreferrer" class="btn-pixel">
                                     View on GitHub →
                                 </a>
-                                <a href="https://when2jam.vercel.app" class="btn-pixel">
+                                <a href="https://when2jam.vercel.app" class="btn-pixel" target="_blank"
+                                    rel="noopener noreferrer">
                                     Demo →
                                 </a>
                             </div>
@@ -177,7 +178,8 @@
                                     rel="noopener noreferrer" class="btn-pixel">
                                     View on GitHub →
                                 </a>
-                                <a href="https://hoodly.streamlit.app" class="btn-pixel">
+                                <a href="https://hoodly.streamlit.app" class="btn-pixel" target="_blank"
+                                    rel="noopener noreferrer">
                                     Demo →
                                 </a>
                             </div>
@@ -194,7 +196,7 @@
                                     rel="noopener noreferrer" class="btn-pixel">
                                     View on GitHub →
                                 </a>
-                                <a href="#" class="btn-pixel">
+                                <a href="#" class="btn-pixel" target="_blank" rel="noopener noreferrer">
                                     Demo →
                                 </a>
                             </div>
@@ -211,7 +213,7 @@
                                     rel="noopener noreferrer" class="btn-pixel">
                                     View on GitHub →
                                 </a>
-                                <a href="#" class="btn-pixel">
+                                <a href="#" class="btn-pixel" target="_blank" rel="noopener noreferrer">
                                     Demo →
                                 </a>
                             </div>
@@ -231,6 +233,23 @@
                                 title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
                         <div class="video-container"><iframe src="https://www.youtube.com/embed/gOg-w7STr0I"
                                 title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="fixed inset-0 z-50 bg-black overflow-y-auto p-8 hidden">
+                <div class="max-w-4xl mx-auto">
+                    <button id="back-btn"
+                        class="text-xl font-bold mb-8 text-white hover:text-gray-300 focus:outline-none">
+                        <span class="text-gray-500">../</span>back
+                    </button>
+
+                    <div class="space-y-12">
+                        <img src="42df7751-46b6-46f6-8450-d6e286fde7c8.JPG" alt="Gallery Photo 1" class="w-full h-auto">
+                        <img src="IMG_5693.PNG" alt="Gallery Photo 2" class="w-full h-auto">
+                        <img src="2025-11-14-235648_hyprshot.png" alt="Gallery Photo 3" class="w-full h-auto">
+                        <img src="2025-11-14-235710_hyprshot.png" alt="Gallery Photo 4" class="w-full h-auto">
+                        <img src="2025-11-14-235726_hyprshot.png" alt="Gallery Photo 5" class="w-full h-auto">
                     </div>
                 </div>
             </section>
@@ -323,13 +342,32 @@
 
         // Input Logic (Easter Egg Preparation)
         const inputField = document.getElementById('terminal-input');
+        const gallerySection = document.getElementById('gallery');
+        const backBtn = document.getElementById('back-btn');
+        const mainContent = document.querySelector('main');
+
+        // Back button logic
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                gallerySection.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+                inputField.focus();
+            });
+        }
+
         inputField.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const command = inputField.value.toLowerCase().trim();
 
-                // --- EASTER EGG LOGIC GOES HERE ---
-                // Example:
-                // if (command === 'hello') { alert('Hi there!'); }
+                // --- EASTER EGG LOGIC ---
+                if (command === 'gallery') {
+                    if (gallerySection) {
+                        gallerySection.classList.remove('hidden');
+                        mainContent.classList.add('hidden');
+                        // Scroll to top of gallery
+                        gallerySection.scrollTop = 0;
+                    }
+                }
                 // ----------------------------------
 
                 console.log('Command executed:', command);
