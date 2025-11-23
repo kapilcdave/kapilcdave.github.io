@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +9,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Adwaita:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script async src="//www.instagram.com/embed.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             background: #000;
-            overflow-y: auto; 
+            overflow-y: auto;
             font-family: 'Adwaita', monospace;
             color: #fff;
         }
+
         /* Custom scrollbar for a more terminal feel */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #111; 
+            background: #111;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #333; 
+            background: #333;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #555; 
+            background: #555;
         }
 
         .btn-pixel {
-            background-color: #fff; color: #000; font-weight: 700;
-            padding: 8px 12px; border: 2px solid #fff; display: inline-block; text-decoration: none;
+            background-color: #fff;
+            color: #000;
+            font-weight: 700;
+            padding: 8px 12px;
+            border: 2px solid #fff;
+            display: inline-block;
+            text-decoration: none;
             font-size: 0.9rem;
         }
-        .btn-pixel:hover { background-color: #000; color: #fff; }
-        
+
+        .btn-pixel:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
         .video-container {
-            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
-            width: 100%; border: 2px solid #555;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            border: 2px solid #555;
         }
-        .video-container:hover { border-color: #fff; }
+
+        .video-container:hover {
+            border-color: #fff;
+        }
+
         .video-container iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
+
         .instagram-media {
             background: #000 !important;
             border: 2px solid #333 !important;
@@ -55,16 +88,18 @@
             max-width: 400px !important;
             width: 100% !important;
         }
+
         .project-card {
             border: 2px solid #333;
             padding: 16px;
             margin-bottom: 16px;
             transition: border-color 0.3s;
         }
+
         .project-card:hover {
             border-color: #fff;
         }
-        
+
         /* Terminal Input Styling */
         #terminal-input {
             background: transparent;
@@ -75,13 +110,15 @@
             padding: 0;
             margin: 0;
             width: 100%;
-            caret-color: #fff; /* The blinking cursor color */
+            caret-color: #fff;
+            /* The blinking cursor color */
         }
     </style>
 </head>
+
 <body>
     <main class="max-w-4xl mx-auto p-8 md:p-12">
-        
+
         <section id="home" class="mb-16">
             <div class="flex items-center text-3xl font-bold flex-wrap">
                 <label for="terminal-input" class="whitespace-nowrap mr-3">[kapil@website]$</label>
@@ -93,12 +130,12 @@
         </section>
 
         <div class="relative">
-            
+
             <section id="about" class="relative mb-16">
                 <h2 class="text-2xl font-bold mb-6 text-white">
                     <span class="text-gray-500">./</span>about
                 </h2>
-                <div class="pl-4"> 
+                <div class="pl-4">
                     <p class="text-lg text-gray-300">
                         Hello! I'm Kapil, a freshman at UC Berkeley studying math and computer science
                     </p>
@@ -111,15 +148,34 @@
                 </h2>
                 <div class="pl-4">
                     <div class="space-y-4">
-                        
+
+                        <div class="project-card">
+                            <h3 class="text-xl font-bold mb-2">
+                                when2jam
+                            </h3>
+                            <p class="text-gray-400 mb-4">A minimalist way to find times that work</p>
+
+                            <div class="flex flex-wrap gap-4">
+                                <a href="https://github.com/kapilcdave/when2jam" target="_blank"
+                                    rel="noopener noreferrer" class="btn-pixel">
+                                    View on GitHub →
+                                </a>
+                                <a href="when2jam.vercel.app" class="btn-pixel">
+                                    Demo →
+                                </a>
+                            </div>
+                        </div>
+
+
                         <div class="project-card">
                             <h3 class="text-xl font-bold mb-2">
                                 Kite Flier Simulator
                             </h3>
                             <p class="text-gray-400 mb-4">A physics-based kite flying simulation</p>
-                            
+
                             <div class="flex flex-wrap gap-4">
-                                <a href="https://github.com/kapilcdave/KiteFlyerSimulator" target="_blank" rel="noopener noreferrer" class="btn-pixel">
+                                <a href="https://github.com/kapilcdave/KiteFlyerSimulator" target="_blank"
+                                    rel="noopener noreferrer" class="btn-pixel">
                                     View on GitHub →
                                 </a>
                                 <a href="#" class="btn-pixel">
@@ -133,9 +189,10 @@
                                 Fortnite 2D
                             </h3>
                             <p class="text-gray-400 mb-4">A 2D version of the popular battle royale game</p>
-                            
+
                             <div class="flex flex-wrap gap-4">
-                                <a href="https://github.com/kapilcdave/fortnite2d" target="_blank" rel="noopener noreferrer" class="btn-pixel">
+                                <a href="https://github.com/kapilcdave/fortnite2d" target="_blank"
+                                    rel="noopener noreferrer" class="btn-pixel">
                                     View on GitHub →
                                 </a>
                                 <a href="#" class="btn-pixel">
@@ -154,8 +211,10 @@
                 </h2>
                 <div class="pl-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="video-container"><iframe src="https://www.youtube.com/embed/hnQ6ntRB-No" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
-                        <div class="video-container"><iframe src="https://www.youtube.com/embed/gOg-w7STr0I" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/hnQ6ntRB-No"
+                                title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
+                        <div class="video-container"><iframe src="https://www.youtube.com/embed/gOg-w7STr0I"
+                                title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
                     </div>
                 </div>
             </section>
@@ -167,44 +226,73 @@
                 <div class="pl-4">
                     <p class="text-xl text-gray-300 mb-10 max-w-lg mx-auto text-center"></p>
                     <div class="flex flex-wrap justify-center items-center gap-8">
-                        <a href="https://github.com/kapilcdave" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="GitHub">
-                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.0115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        <a href="https://github.com/kapilcdave" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white" title="GitHub">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.03-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.0115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.203 2.398.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.745 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
                         </a>
-                        <a href="https://www.linkedin.com/in/kapilcdave/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="LinkedIn">
-                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        <a href="https://www.linkedin.com/in/kapilcdave/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white" title="LinkedIn">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg>
                         </a>
-                        <a href="https://www.youtube.com/@kapilsmusicworld/videos" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="YouTube">
-                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M10,15l-3.5-3.5l1.4-1.4L10,12.2l4.6-4.6l1.4,1.4L10,15z M21.5,8.1c-0.2-0.8-0.8-1.4-1.6-1.6C18.2,6,12,6,12,6s-6.2,0-7.9,0.5 c-0.8,0.2-1.4,0.8-1.6,1.6C2,9.8,2,12,2,12s0,2.2,0.5,3.9c0.2,0.8,0.8,1.4,1.6,1.6C5.8,18,12,18,12,18s6.2,0,7.9-0.5 c0.8-0.2,1.4-0.8,1.6-1.6C22,14.2,22,12,22,12S22,9.8,21.5,8.1z M8,15.5V8.5L14,12L8,15.5z"></path></svg>
+                        <a href="https://www.youtube.com/@kapilsmusicworld/videos" target="_blank"
+                            rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="YouTube">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M10,15l-3.5-3.5l1.4-1.4L10,12.2l4.6-4.6l1.4,1.4L10,15z M21.5,8.1c-0.2-0.8-0.8-1.4-1.6-1.6C18.2,6,12,6,12,6s-6.2,0-7.9,0.5 c-0.8,0.2-1.4,0.8-1.6,1.6C2,9.8,2,12,2,12s0,2.2,0.5,3.9c0.2,0.8,0.8,1.4,1.6,1.6C5.8,18,12,18,12,18s6.2,0,7.9-0.5 c0.8-0.2,1.4-0.8,1.6-1.6C22,14.2,22,12,22,12S22,9.8,21.5,8.1z M8,15.5V8.5L14,12L8,15.5z">
+                                </path>
+                            </svg>
                         </a>
-                        <a href="https://x.com/kapildaway" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="X.com">
-                            <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H4.68l4.713 6.231L14.07 2.25h4.174zm-1.64 17.28h2.54l-9.7-12.98H6.85l9.75 12.98z"></path></svg>
+                        <a href="https://x.com/kapildaway" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white" title="X.com">
+                            <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H4.68l4.713 6.231L14.07 2.25h4.174zm-1.64 17.28h2.54l-9.7-12.98H6.85l9.75 12.98z">
+                                </path>
+                            </svg>
                         </a>
-                        <a href="https://www.instagram.com/kapil.da.way/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" title="Instagram">
-                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.229-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85C2.229 3.874 3.748 2.331 6.97 2.185c1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 10.333c-2.302 0-4.171-1.869-4.171-4.171s1.869-4.171 4.171-4.171 4.171 1.869 4.171 4.171-1.869 4.171-4.171 4.171zm6.162-10.84c-.802 0-1.452.65-1.452 1.452s.65 1.452 1.452 1.452 1.452-.65 1.452-1.452-.65-1.452-1.452-1.452z"></path></svg>
+                        <a href="https://www.instagram.com/kapil.da.way/" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white" title="Instagram">
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.229-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85C2.229 3.874 3.748 2.331 6.97 2.185c1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.259 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162S15.403 5.838 12 5.838zm0 10.333c-2.302 0-4.171-1.869-4.171-4.171s1.869-4.171 4.171-4.171 4.171 1.869 4.171 4.171-1.869 4.171-4.171 4.171zm6.162-10.84c-.802 0-1.452.65-1.452 1.452s.65 1.452 1.452 1.452 1.452-.65 1.452-1.452-.65-1.452-1.452-1.452z">
+                                </path>
+                            </svg>
                         </a>
                         <a href="mailto:kapildave@berkeley.edu" class="text-gray-400 hover:text-white" title="Email">
-                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
+                            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z">
+                                </path>
+                            </svg>
                         </a>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-    
+
     <script>
         window.onload = () => {
             if (typeof window.instgrm !== 'undefined') {
                 window.instgrm.Embeds.process();
             }
-            
+
             // Focus the terminal input on load
             const input = document.getElementById('terminal-input');
             const hint = document.getElementById('hint-text');
-            if(input) {
+            if (input) {
                 input.focus();
                 // Show hint after 2 seconds
                 setTimeout(() => {
-                    if(hint) hint.style.opacity = '1';
+                    if (hint) hint.style.opacity = '1';
                 }, 2000);
             }
 
@@ -222,7 +310,7 @@
         inputField.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 const command = inputField.value.toLowerCase().trim();
-                
+
                 // --- EASTER EGG LOGIC GOES HERE ---
                 // Example:
                 // if (command === 'hello') { alert('Hi there!'); }
@@ -234,4 +322,5 @@
         });
     </script>
 </body>
+
 </html>
